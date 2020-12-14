@@ -40,7 +40,7 @@ import torch.nn.functional as F
 
 __pdoc__ = {}
 
-for clsn in ['DeepSurvivalMachinesTorch', 
+for clsn in ['DeepSurvivalMachinesTorch',
              'DeepRecurrentSurvivalMachinesTorch']:
   for membr in ['training', 'dump_patches']:
 
@@ -271,7 +271,7 @@ class DeepRecurrentSurvivalMachinesTorch(nn.Module):
       self.act = nn.SELU()
       self.shape = nn.ParameterDict({str(r+1): nn.Parameter(-torch.ones(k))
                                      for r in range(self.risks)})
-      self.scale = nn.ParameterDict({str(r+1):nn.Parameter(-torch.ones(k))
+      self.scale = nn.ParameterDict({str(r+1): nn.Parameter(-torch.ones(k))
                                      for r in range(self.risks)})
     elif self.dist in ['Normal']:
       self.act = nn.Identity()
